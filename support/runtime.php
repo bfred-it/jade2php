@@ -1,6 +1,11 @@
 <?php
 
-error_reporting(E_ALL & ~E_NOTICE);
+function access ($object, $name) {
+	if (is_array($object)) {
+		return $object[$name];
+	}
+	return $object->$name;
+}
 
 function attr($name, $value = true, $escaped = true) {
 	if (!empty($value)) {
@@ -56,5 +61,3 @@ function add() {
 	}
 	return $result;
 }
-
-?>
