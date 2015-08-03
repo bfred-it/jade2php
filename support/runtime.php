@@ -8,7 +8,7 @@ function access ($object, $name) {
 }
 
 function attr($name, $value = true, $escaped = true) {
-	if (!empty($value)) {
+	if (!empty($value) || $value === '0') {
 		echo " $name=\"$value\"";
 	}
 }
